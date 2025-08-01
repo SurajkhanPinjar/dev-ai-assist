@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ai-core/dev-ai-assist.ai-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ai-core/dev-ai-assist.ai-core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bugfinder/dev-ai-assist.bugfinder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bugfinder/dev-ai-assist.bugfinder.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/code-optimizer/dev-ai-assist.code-optimizer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/code-optimizer/dev-ai-assist.code-optimizer.main.iml" />
     </modules>
   </component>
 </project>

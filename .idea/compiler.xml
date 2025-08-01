@@ -16,6 +16,8 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
         </processorPath>
         <module name="dev-ai-assist.bugfinder.main" />
+        <module name="dev-ai-assist.model.main" />
+        <module name="dev-ai-assist.code-optimizer.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
@@ -28,6 +30,12 @@
       <module name="dev-ai-assist.bugfinder" options="-parameters" />
       <module name="dev-ai-assist.bugfinder.main" options="-parameters" />
       <module name="dev-ai-assist.bugfinder.test" options="-parameters" />
+      <module name="dev-ai-assist.code-optimizer" options="-parameters" />
+      <module name="dev-ai-assist.code-optimizer.main" options="-parameters" />
+      <module name="dev-ai-assist.code-optimizer.test" options="-parameters" />
+      <module name="dev-ai-assist.model" options="-parameters" />
+      <module name="dev-ai-assist.model.main" options="-parameters" />
+      <module name="dev-ai-assist.model.test" options="-parameters" />
     </option>
   </component>
 </project>

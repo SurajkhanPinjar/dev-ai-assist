@@ -10,6 +10,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ai-core" />
             <option value="$PROJECT_DIR$/bugfinder" />
+            <option value="$PROJECT_DIR$/code-optimizer" />
+            <option value="$PROJECT_DIR$/model" />
           </set>
         </option>
       </GradleProjectSettings>
