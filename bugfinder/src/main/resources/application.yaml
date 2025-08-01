@@ -1,0 +1,21 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: bug-finder
+
+  main:
+    allow-bean-definition-overriding: true
+
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+logging:
+  level:
+    root: INFO
+    com.aidevassist.bugfinder: DEBUG
+
+  pattern:
+    console: "%d{HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
