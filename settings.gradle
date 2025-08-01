@@ -1,2 +1,3 @@
 rootProject.name = 'dev-ai-assist'
-include 'ai-core', 'bugfinder', 'model', 'code-optimizer', 'auto-javadocs'
+include 'ai-core', 'bugfinder', 'model', 'code-optimizer',
+        'auto-javadocs', 'code-analyzer', 'design-principle-checks', 'api-gateway'

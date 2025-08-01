@@ -3,3 +3,21 @@
 
 ./gradlew clean build
 ./gradlew :ai-core:bootRun
+
+./gradlew clean build
+./gradlew :model:bootRun
+
+./gradlew clean build
+./gradlew :code-optimizer:bootRun
+
+./gradlew clean build
+./gradlew :auto-javadocs:bootRun
+
+./gradlew clean build
+./gradlew :code-analyzer:bootRun
+
+./gradlew clean build
+./gradlew :design-principle-checks:bootRun
+
+./gradlew clean build
+./gradlew :api-gateway:bootRun

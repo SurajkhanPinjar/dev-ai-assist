@@ -19,12 +19,18 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'com.github.javaparser:javaparser-core:3.25.4'  // For AST
-	implementation project(':model')                                // If using shared DTOs
-	implementation project(':ai-core')                              // If using OpenAI
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation 'com.github.javaparser:javaparser-core:3.25.4'
+	implementation project(':model')           // ClassInfo, etc.
+	implementation project(':code-analyzer')   // Parsed metadata
+
+	// Optional logging / helper libs
+	implementation 'org.slf4j:slf4j-api:2.0.13'
+	implementation 'com.google.guava:guava:33.1.0-jre'
+
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
 }
 
 tasks.named('test') {

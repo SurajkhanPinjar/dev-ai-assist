@@ -19,12 +19,11 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'com.github.javaparser:javaparser-core:3.25.4'  // For AST
-	implementation project(':model')                                // If using shared DTOs
-	implementation project(':ai-core')                              // If using OpenAI
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation 'com.github.javaparser:javaparser-core:3.25.4'
+	implementation project(":model")   // Reuse common POJOs
 }
 
 tasks.named('test') {

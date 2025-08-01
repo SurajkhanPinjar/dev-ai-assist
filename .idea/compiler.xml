@@ -27,15 +27,24 @@
       <module name="dev-ai-assist.ai-core" options="-parameters" />
       <module name="dev-ai-assist.ai-core.main" options="-parameters" />
       <module name="dev-ai-assist.ai-core.test" options="-parameters" />
+      <module name="dev-ai-assist.api-gateway" options="-parameters" />
+      <module name="dev-ai-assist.api-gateway.main" options="-parameters" />
+      <module name="dev-ai-assist.api-gateway.test" options="-parameters" />
       <module name="dev-ai-assist.auto-javadocs" options="-parameters" />
       <module name="dev-ai-assist.auto-javadocs.main" options="-parameters" />
       <module name="dev-ai-assist.auto-javadocs.test" options="-parameters" />
       <module name="dev-ai-assist.bugfinder" options="-parameters" />
       <module name="dev-ai-assist.bugfinder.main" options="-parameters" />
       <module name="dev-ai-assist.bugfinder.test" options="-parameters" />
+      <module name="dev-ai-assist.code-analyzer" options="-parameters" />
+      <module name="dev-ai-assist.code-analyzer.main" options="-parameters" />
+      <module name="dev-ai-assist.code-analyzer.test" options="-parameters" />
       <module name="dev-ai-assist.code-optimizer" options="-parameters" />
       <module name="dev-ai-assist.code-optimizer.main" options="-parameters" />
       <module name="dev-ai-assist.code-optimizer.test" options="-parameters" />
+      <module name="dev-ai-assist.design-principle-checks" options="-parameters" />
+      <module name="dev-ai-assist.design-principle-checks.main" options="-parameters" />
+      <module name="dev-ai-assist.design-principle-checks.test" options="-parameters" />
       <module name="dev-ai-assist.model" options="-parameters" />
       <module name="dev-ai-assist.model.main" options="-parameters" />
       <module name="dev-ai-assist.model.test" options="-parameters" />
