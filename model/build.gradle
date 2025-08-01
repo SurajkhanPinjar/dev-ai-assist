@@ -18,22 +18,9 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	// Validation annotations (e.g. @NotNull)
-	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
-
-	// JSON serialization for DTOs
-	implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
-
-	// Lombok for DTOs and builders
-	compileOnly 'org.projectlombok:lombok:1.18.30'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
-
-	// For potential model-level unit tests
-	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {
