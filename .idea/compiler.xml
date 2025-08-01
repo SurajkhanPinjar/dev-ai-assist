@@ -27,6 +27,9 @@
       <module name="dev-ai-assist.ai-core" options="-parameters" />
       <module name="dev-ai-assist.ai-core.main" options="-parameters" />
       <module name="dev-ai-assist.ai-core.test" options="-parameters" />
+      <module name="dev-ai-assist.auto-javadocs" options="-parameters" />
+      <module name="dev-ai-assist.auto-javadocs.main" options="-parameters" />
+      <module name="dev-ai-assist.auto-javadocs.test" options="-parameters" />
       <module name="dev-ai-assist.bugfinder" options="-parameters" />
       <module name="dev-ai-assist.bugfinder.main" options="-parameters" />
       <module name="dev-ai-assist.bugfinder.test" options="-parameters" />

@@ -29,6 +29,8 @@ dependencies {
 
 	// Reuse shared DTOs, services, and OpenAI logic
 	implementation(project(":ai-core"))
+	// Internal Modules
+	implementation project(":model")
 
 	// Spring Context for DI and @Service
 	implementation("org.springframework:spring-context:6.1.3")
