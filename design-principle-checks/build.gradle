@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.4'
+	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -18,19 +18,24 @@ repositories {
 }
 
 dependencies {
+	// Core Spring Boot (no web)
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+	// Static code parsing
 	implementation 'com.github.javaparser:javaparser-core:3.25.4'
-	implementation project(':model')           // ClassInfo, etc.
-	implementation project(':code-analyzer')   // Parsed metadata
 
-	// Optional logging / helper libs
+	// Internal Modules
+	implementation project(':model')
+	implementation project(':code-analyzer')
+
+	// Utilities
 	implementation 'org.slf4j:slf4j-api:2.0.13'
 	implementation 'com.google.guava:guava:33.1.0-jre'
 
+	// Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {

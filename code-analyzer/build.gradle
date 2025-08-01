@@ -18,12 +18,18 @@ repositories {
 }
 
 dependencies {
+	// Core Spring Boot support (no web, no reactive)
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// JavaParser for static code analysis
+	implementation 'com.github.javaparser:javaparser-core:3.25.4'
+
+	// Internal shared module for models
+	implementation project(":model")
+
+	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	implementation 'com.github.javaparser:javaparser-core:3.25.4'
-	implementation project(":model")   // Reuse common POJOs
 }
 
 tasks.named('test') {

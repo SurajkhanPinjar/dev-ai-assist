@@ -18,30 +18,29 @@ repositories {
 }
 
 dependencies {
-
-	// Spring Boot Starter
+	// Core Spring Boot
 	implementation 'org.springframework.boot:spring-boot-starter'
 
-	// Web support (optional, if you're building APIs)
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// Reactive Web API (only if exposing endpoints)
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
-	// Lombok
-	compileOnly 'org.projectlombok:lombok:1.18.30'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
-
-	// Jackson for JSON serialization
+	// JSON support
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
 
-	// Jakarta Bean Validation (for DTO validation)
+	// Validation support (e.g., @NotNull)
 	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
 
 	// Internal Modules
 	implementation project(":model")
 	implementation project(":ai-core")
 
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
 }
 
 tasks.named('test') {

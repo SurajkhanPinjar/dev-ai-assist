@@ -1,6 +1,32 @@
 server:
-  port: 8088
+  port: 8080
 
 spring:
   application:
     name: api-gateway
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      routes:
+        - id: ai-core
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/ai/**
+
+        - id: code-analyzer
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/analyzer/**
+
+        - id: bugfinder
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/bug/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
