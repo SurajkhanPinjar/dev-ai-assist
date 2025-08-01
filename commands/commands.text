@@ -1,0 +1,5 @@
+./gradlew clean build
+./gradlew :bugfinder:bootRun
+
+./gradlew clean build
+./gradlew :ai-core:bootRun
