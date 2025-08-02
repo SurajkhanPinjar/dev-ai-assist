@@ -19,10 +19,12 @@ repositories {
 
 dependencies {
 	// Core Spring Boot Web Application
-//	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// to register in eureka server
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
 	// Spring Cloud Gateway (API routing)
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'

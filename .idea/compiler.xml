@@ -7,10 +7,9 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="dev-ai-assist.bugfinder.main" />
         <module name="dev-ai-assist.model.main" />
         <module name="dev-ai-assist.code-optimizer.main" />
-        <module name="dev-ai-assist.bugfinder.main" />
-        <module name="dev-ai-assist.api-gateway.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -19,6 +18,13 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.5.4/5bca23f43154ba43fbe171feae198f21d0ed7670/spring-boot-configuration-processor-3.5.4.jar" />
         </processorPath>
         <module name="dev-ai-assist.ai-core.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.32/17d46b3e205515e1e8efd3ee4d57ce8018914163/lombok-1.18.32.jar" />
+        </processorPath>
+        <module name="dev-ai-assist.api-gateway.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
@@ -46,6 +52,9 @@
       <module name="dev-ai-assist.design-principle-checks" options="-parameters" />
       <module name="dev-ai-assist.design-principle-checks.main" options="-parameters" />
       <module name="dev-ai-assist.design-principle-checks.test" options="-parameters" />
+      <module name="dev-ai-assist.eureka-server" options="-parameters" />
+      <module name="dev-ai-assist.eureka-server.main" options="-parameters" />
+      <module name="dev-ai-assist.eureka-server.test" options="-parameters" />
       <module name="dev-ai-assist.model" options="-parameters" />
       <module name="dev-ai-assist.model.main" options="-parameters" />
       <module name="dev-ai-assist.model.test" options="-parameters" />

@@ -1,3 +1,7 @@
+## port: 8761
+./gradlew clean build
+./gradlew :eureka-server:bootRun
+
 ## port: 8080
 ./gradlew clean build
 ./gradlew :api-gateway:bootRun
