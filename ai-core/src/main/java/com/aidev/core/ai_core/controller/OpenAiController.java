@@ -19,4 +19,8 @@ public class OpenAiController {
     public OpenAiResponseDto getResponse(@RequestBody OpenAiRequestDto requestDto) {
         return openAiService.fetchResponse(requestDto);
     }
+    @GetMapping("/ping")
+    public String ping() {
+        return "AI-Core is alive!";
+    }
 }

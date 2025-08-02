@@ -9,19 +9,23 @@ spring:
 
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
       routes:
         - id: ai-core
-          uri: http://localhost:8081
+          uri: lb://ai-core
           predicates:
             - Path=/api/ai/**
 
         - id: code-analyzer
-          uri: http://localhost:8082
+          uri: lb://code-analyzer
           predicates:
             - Path=/api/analyzer/**
 
         - id: bugfinder
-          uri: http://localhost:8083
+          uri: lb://bugfinder
           predicates:
             - Path=/api/bug/**
 

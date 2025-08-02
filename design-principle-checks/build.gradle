@@ -17,6 +17,17 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	set('springCloudVersion', "2023.0.1")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+
 dependencies {
 	// Core Spring Boot (no web)
 	implementation 'org.springframework.boot:spring-boot-starter'

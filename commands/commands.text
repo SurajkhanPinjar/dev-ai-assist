@@ -9,16 +9,19 @@
 ## port: 8081
 ./gradlew clean build
 ./gradlew :ai-core:bootRun
+                        http://localhost:8081/api/ai/ping
+                        http://localhost:8080/api/ai/ping   ## API GATEWAY
+
 
 ## port: 8082
 ./gradlew clean build
 ./gradlew :code-analyzer:bootRun
+                        http://localhost:8082/api/analyzer/ping
+                        http://localhost:8080/api/analyzer/ping
 
 ## port: 8083
 ./gradlew clean build
 ./gradlew :bugfinder:bootRun
-
-
 
 ./gradlew clean build
 ./gradlew :model:bootRun
@@ -29,8 +32,9 @@
 ./gradlew clean build
 ./gradlew :auto-javadocs:bootRun
 
-
-
 ./gradlew clean build
 ./gradlew :design-principle-checks:bootRun
 
+
+=================OTHERS:===================
+./gradlew clean build --refresh-dependencies

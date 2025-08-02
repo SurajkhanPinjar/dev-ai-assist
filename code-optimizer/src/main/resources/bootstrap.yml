@@ -1,14 +1,6 @@
-server:
-  port: 8081
-
 spring:
   application:
-    name: ai-core
-
-openai:
-  api-url: https://api.openai.com/v1/chat/completions
-  model: gpt-4
-  key: sk-xxxxxxxxxxxxxxxxxxxx
+    name: code-optimizer
 
 eureka:
   client:
