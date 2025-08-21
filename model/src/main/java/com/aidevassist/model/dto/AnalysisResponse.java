@@ -10,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class AnalysisResponse {
-    private String summary;
-    private List<String> suggestions;
+    private List<ViolationDetail> violations;
+//    private String summary;
+//    private List<String> suggestions;
 }

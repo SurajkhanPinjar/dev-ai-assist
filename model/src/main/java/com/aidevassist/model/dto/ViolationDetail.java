@@ -8,7 +8,8 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ViolationDetail {
-    private String principle;
-    private String description;
-    private String lineSnippet;
+    private String message;
+//    private String principle;
+//    private String description;
+//    private String lineSnippet;
 }
