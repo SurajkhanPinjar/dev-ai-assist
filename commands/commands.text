@@ -24,6 +24,8 @@
 ## port: 8083
 ./gradlew clean build
 ./gradlew :bugfinder:bootRun
+                        http://localhost:8083/swagger-ui/index.html
+
 
 ./gradlew clean build
 ./gradlew :model:bootRun

@@ -8,5 +8,5 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class OptimizationRequest {
-    private String code;
+    private String sourceCode;
 }
