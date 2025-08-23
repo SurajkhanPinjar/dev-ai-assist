@@ -5,10 +5,22 @@ spring:
   application:
     name: ai-core
 
-openai:
-  api-url: https://api.openai.com/v1/chat/completions
-  model: gpt-4
-  key: sk-xxxxxxxxxxxxxxxxxxxx
+  ai:
+    model:
+      chat: ollama # enable ollama chat model
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: mistral
+
+
+
+# gpt 5 paid version
+#openai:
+#  api-url: https://api.openai.com/v1/chat/completions
+#  model: gpt-5
+#  key: sk-proj-5R1amvLv28rKK0KLBY2o_VoqGsQ4GwkL-UPqjYSrTUYKopA4A7aoJv1mpNwjmjmswQDDDT3BlbkFJk-pYSoD2GMg3FLxFDjxsUYRv-jZjW1id8dfdhZ46Qf4tBpwWEZJYM-G39db9A_vsouLLi-bs8A
 
 eureka:
   client:

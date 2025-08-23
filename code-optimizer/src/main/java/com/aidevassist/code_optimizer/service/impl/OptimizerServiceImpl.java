@@ -1,6 +1,8 @@
 package com.aidevassist.code_optimizer.service.impl;
 
 import com.aidevassist.code_optimizer.service.OptimizerService;
+import com.aidevassist.model.dto.CodeRequest;
+import com.aidevassist.model.dto.CodeResponse;
 import com.aidevassist.model.dto.OptimizationRequest;
 import com.aidevassist.model.dto.OptimizationResponse;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import java.util.List;
 
 @Service
 public class OptimizerServiceImpl implements OptimizerService {
+
 
     @Override
     public OptimizationResponse optimizeCode(OptimizationRequest request) {
@@ -29,5 +32,10 @@ public class OptimizerServiceImpl implements OptimizerService {
         }
 
         return new OptimizationResponse(code, suggestions);
+    }
+
+    @Override
+    public CodeResponse optimize(CodeRequest request) {
+        return null;
     }
 }

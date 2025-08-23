@@ -29,6 +29,7 @@ configurations.all {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://repo.spring.io/milestone") } // add milestone repo for spring-ai releases
 }
 
 dependencies {
@@ -53,8 +54,11 @@ dependencies {
 	// to register service into Eureka
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
-	// swagger
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
+	// ✅ Spring AI BOM + Ollama starter
+	implementation platform("org.springframework.ai:spring-ai-bom:1.0.1")
+	implementation "org.springframework.ai:spring-ai-starter-model-ollama:1.0.1"
 }
 
 tasks.named('test') {
