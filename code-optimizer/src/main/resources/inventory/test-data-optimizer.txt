@@ -1,3 +1,27 @@
+./gradlew clean build
+./gradlew :code-optimizer:bootRun
+        ## SWAGGER:
+        http://localhost:8085/swagger-ui/index.html
+
 {
   "sourceCode": "import java.util.*; public class Test { public static void main(String[] args) { System.out.println(\"Hello Optimizer\"); } }"
+}
+
+
+{
+  "sourceCode": "import java.util.*;\npublic class Test {\n public static void main(String[] args) {\n System.out.println(\"Hello\");\n }\n}"
+}
+
+//Output:
+{
+  "optimizedCode": "import java.util.List;\nimport java.util.Map;\npublic class Test {\n public static void main(String[] args) {\n logger.info(\"Hello\");\n }\n}",
+  "suggestions": [
+    "Avoid wildcard imports. Replace with specific imports.",
+    "Use a Logger instead of System.out.println."
+  ]
+}
+
+-==========================================================
+{
+  "code": "import java.util.*;\npublic class Test { public static void main(String[] args){ System.out.println(\"Hello World\"); } }"
 }

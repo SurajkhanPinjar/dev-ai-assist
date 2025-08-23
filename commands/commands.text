@@ -32,7 +32,8 @@
 ./gradlew :model:bootRun
 
 ./gradlew clean build
-./gradlew :code-optimizer:bootRun
+./gradlew :code-optimizer:bootRun --debug-jvm
+ ./gradlew :code-optimizer:bootRun --debug-jvm --no-daemon
 
                        http://localhost:8085/swagger-ui/index.html
 
