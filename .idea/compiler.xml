@@ -11,6 +11,7 @@
         <module name="dev-ai-assist.code-optimizer.main" />
         <module name="dev-ai-assist.bugfinder.main" />
         <module name="dev-ai-assist.api-gateway.main" />
+        <module name="dev-ai-assist.auto-javadocs.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />

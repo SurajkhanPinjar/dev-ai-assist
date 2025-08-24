@@ -47,6 +47,7 @@ dependencies {
 
 	// Internal shared module for models
 	implementation project(":model")
+	implementation project(":ai-core")
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

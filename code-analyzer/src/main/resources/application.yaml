@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: code-analyzer
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   client:

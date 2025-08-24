@@ -19,6 +19,7 @@
 ## port: 8082
 ./gradlew clean build
 ./gradlew :code-analyzer:bootRun
+./gradlew clean :code-analyzer:bootRun --no-daemon --debug-jvm
                         http://localhost:8082/api/analyzer/ping
                         http://localhost:8080/api/analyzer/ping
                         http://localhost:8082/swagger-ui/index.html
@@ -39,6 +40,8 @@
 
 ./gradlew clean build
 ./gradlew :auto-javadocs:bootRun
+ ./gradlew :auto-javadocs:bootRun --debug-jvm --no-daemon
+                       http://localhost:8086/swagger-ui/index.html
 
 ./gradlew clean build
 ./gradlew :design-principle-checks:bootRun
