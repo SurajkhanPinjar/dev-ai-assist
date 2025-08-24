@@ -9,7 +9,8 @@
 ## port: 8081
 ./gradlew clean build
 ./gradlew :ai-core:bootRun
-./gradlew :ai-core:bootRun --debug-jvm
+./gradlew :ai-core:bootRun --debug-jvm  --no-daemon
+./gradlew clean :ai-core:bootRun --no-daemon --debug-jvm
                         http://localhost:8081/api/ai/ping
                         http://localhost:8080/api/ai/ping   ## API GATEWAY
                         http://localhost:8081/swagger-ui/index.html
@@ -34,7 +35,6 @@
 ./gradlew clean build
 ./gradlew :code-optimizer:bootRun --debug-jvm
  ./gradlew :code-optimizer:bootRun --debug-jvm --no-daemon
-
                        http://localhost:8085/swagger-ui/index.html
 
 ./gradlew clean build

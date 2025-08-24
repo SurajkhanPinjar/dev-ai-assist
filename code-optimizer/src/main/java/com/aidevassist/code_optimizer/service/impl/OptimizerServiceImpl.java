@@ -2,10 +2,10 @@ package com.aidevassist.code_optimizer.service.impl;
 
 import com.aidevassist.code_optimizer.dto.CodeRequest;
 import com.aidevassist.code_optimizer.dto.CodeResponse;
-import com.aidevassist.code_optimizer.dto.OptimizationRequest;
-import com.aidevassist.code_optimizer.dto.OptimizationResponse;
 import com.aidevassist.code_optimizer.rules.OptimizationRule;
 import com.aidevassist.code_optimizer.service.OptimizerService;
+import com.aidevassist.model.dto.OptimizationRequest;
+import com.aidevassist.model.dto.OptimizationResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +40,7 @@ public class OptimizerServiceImpl implements OptimizerService {
 
     @Override
     public CodeResponse optimize(CodeRequest request) {
-        OptimizationResponse response = optimizeCode(new OptimizationRequest(request.getCode()));
-        return response.toCodeResponse();
+        return null;
     }
+
 }

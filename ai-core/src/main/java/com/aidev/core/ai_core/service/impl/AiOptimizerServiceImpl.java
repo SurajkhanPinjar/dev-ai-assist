@@ -4,7 +4,6 @@ import com.aidev.core.ai_core.service.AiOptimizerService;
 import com.aidevassist.model.dto.OptimizationRequest;
 import com.aidevassist.model.dto.OptimizationResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +18,25 @@ public class AiOptimizerServiceImpl implements AiOptimizerService {
     @Override
     public OptimizationResponse optimizeWithAi(OptimizationRequest request) {
         String prompt = """
-            You are a senior Java code reviewer.
-            Analyze this Java code and suggest improvements and optimizations.
-            Return suggestions in concise bullet points.
+                You are a senior Java code reviewer.
+                Analyze this Java code and suggest improvements and optimizations.
+                Return only concise bullet points with suggestions.
+                Do NOT include any code, examples, or explanations—just the bullet points.
+                
+                Code:               
+                """ + request.getSourceCode();
+        String promptForCode = """
+                You are a senior Java code reviewer and optimizer.
+                Rewrite the following Java code in an optimized and clean form.
+                Only return the full Java code, wrapped in a ```java code block```.
+                Do not include any explanations or suggestions.
+                
+                Code:                
+                """ + request.getSourceCode();
 
-            Code:                
-            """ + request.getSourceCode();
-
+        String codeResponse = chatModel.call(promptForCode);
         String chatResponse = chatModel.call(prompt);
-        return new OptimizationResponse(request.getSourceCode(), List.of(chatResponse));
+
+        return new OptimizationResponse(codeResponse, List.of(chatResponse));
     }
 }

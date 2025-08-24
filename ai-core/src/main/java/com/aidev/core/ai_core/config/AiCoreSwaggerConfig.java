@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SwaggerConfig {
+public class AiCoreSwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
