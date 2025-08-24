@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ai-core/dev-ai-assist.ai-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ai-core/dev-ai-assist.ai-core.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/auto-javadocs/dev-ai-assist.auto-javadocs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/auto-javadocs/dev-ai-assist.auto-javadocs.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/code-analyzer/dev-ai-assist.code-analyzer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/code-analyzer/dev-ai-assist.code-analyzer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/design-principle-checks/dev-ai-assist.design-principle-checks.main.iml" filepath="$PROJECT_DIR$/.idea/modules/design-principle-checks/dev-ai-assist.design-principle-checks.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/dev-ai-assist.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/model/dev-ai-assist.model.main.iml" />
     </modules>
   </component>

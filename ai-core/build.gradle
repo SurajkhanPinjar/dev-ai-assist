@@ -40,6 +40,7 @@ dependencies {
 	implementation 'com.fasterxml.jackson.core:jackson-core:2.17.0'
 	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.0'
 	implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
 	implementation project(":model")
 
 	compileOnly 'org.projectlombok:lombok'

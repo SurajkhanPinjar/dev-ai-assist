@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 public class ViolationDetail {
     private String message;
-//    private String principle;
-//    private String description;
-//    private String lineSnippet;
+    private String principle;
+    private String description;
+    private String lineSnippet;
 }

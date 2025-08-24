@@ -45,6 +45,8 @@
 
 ./gradlew clean build
 ./gradlew :design-principle-checks:bootRun
+ ./gradlew clean :design-principle-checks:bootRun --debug-jvm --no-daemon
+    http://localhost:8087/swagger-ui/index.html
 
 
 =================OTHERS:===================
