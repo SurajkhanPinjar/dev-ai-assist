@@ -1,0 +1,14 @@
+package com.aidevassist.model.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class DesignPrincipleRequest {
+    @NotBlank
+    private String code; // Java code snippet to analyze
+}

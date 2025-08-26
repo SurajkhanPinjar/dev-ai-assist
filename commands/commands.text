@@ -1,23 +1,61 @@
+## port: 8761
 ./gradlew clean build
-./gradlew :bugfinder:bootRun
+./gradlew :eureka-server:bootRun
 
+## port: 8080
+./gradlew clean build
+./gradlew :api-gateway:bootRun
+
+## port: 8081
 ./gradlew clean build
 ./gradlew :ai-core:bootRun
+./gradlew :ai-core:bootRun --debug-jvm  --no-daemon
+./gradlew clean :ai-core:bootRun --no-daemon --debug-jvm
+                        http://localhost:8081/api/ai/ping
+                        http://localhost:8080/api/ai/ping   ## API GATEWAY
+                        http://localhost:8081/swagger-ui/index.html
+
+
+## port: 8082
+./gradlew clean build
+./gradlew :code-analyzer:bootRun
+./gradlew clean :code-analyzer:bootRun --no-daemon --debug-jvm
+                        http://localhost:8082/api/analyzer/ping
+                        http://localhost:8080/api/analyzer/ping
+                        http://localhost:8082/swagger-ui/index.html
+
+## port: 8083
+./gradlew clean build
+./gradlew :bugfinder:bootRun
+                        http://localhost:8083/swagger-ui/index.html
+
 
 ./gradlew clean build
 ./gradlew :model:bootRun
 
 ./gradlew clean build
-./gradlew :code-optimizer:bootRun
+./gradlew :code-optimizer:bootRun --debug-jvm
+ ./gradlew :code-optimizer:bootRun --debug-jvm --no-daemon
+                       http://localhost:8085/swagger-ui/index.html
 
 ./gradlew clean build
 ./gradlew :auto-javadocs:bootRun
-
-./gradlew clean build
-./gradlew :code-analyzer:bootRun
+ ./gradlew :auto-javadocs:bootRun --debug-jvm --no-daemon
+                       http://localhost:8086/swagger-ui/index.html
 
 ./gradlew clean build
 ./gradlew :design-principle-checks:bootRun
+ ./gradlew clean :design-principle-checks:bootRun --debug-jvm --no-daemon
+    http://localhost:8087/swagger-ui/index.html
 
 ./gradlew clean build
-./gradlew :api-gateway:bootRun
+./gradlew :design-principle-checks:bootRun
+ ./gradlew clean :design-principle-checks:bootRun --debug-jvm --no-daemon
+    http://localhost:8088/swagger-ui/index.html
+
+
+=================OTHERS:===================
+./gradlew clean build --refresh-dependencies
+./gradlew :junit_generator:bootRun
+./gradlew :junit_generator:bootRun --debug-jvm --no-daemon
+ http://localhost:8088/swagger-ui/index.html

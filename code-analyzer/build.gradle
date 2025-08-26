@@ -1,7 +1,13 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.4'
+	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.1"
+	}
 }
 
 group = 'com.aidevassist'
@@ -17,13 +23,44 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	set('springCloudVersion', "2023.0.1")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
 dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// to register service into Eureka
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	// Core Spring Boot support (no web, no reactive)
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// JavaParser for static code analysis
+	implementation 'com.github.javaparser:javaparser-core:3.25.4'
+
+	// Internal shared module for models
+	implementation project(":model")
+	implementation project(":ai-core")
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
+	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	implementation 'com.github.javaparser:javaparser-core:3.25.4'
-	implementation project(":model")   // Reuse common POJOs
 }
 
 tasks.named('test') {

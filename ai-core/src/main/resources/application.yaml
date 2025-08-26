@@ -1,8 +1,32 @@
 server:
   port: 8081
 
-openai:
-  api-url: https://api.openai.com/v1/chat/completions
-  model: gpt-4
-#  key: ${OPENAI_API_KEY}
-  key: sk-xxxxxxxxxxxxxxxxxxxx
+spring:
+  application:
+    name: ai-core
+
+  ai:
+    model:
+      chat: ollama # enable ollama chat model
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: mistral
+
+
+
+# gpt 5 paid version
+#openai:
+#  api-url: https://api.openai.com/v1/chat/completions
+#  model: gpt-5
+#  key: sk-proj-5R1amvLv28rKK0KLBY2o_VoqGsQ4GwkL-UPqjYSrTUYKopA4A7aoJv1mpNwjmjmswQDDDT3BlbkFJk-pYSoD2GMg3FLxFDjxsUYRv-jZjW1id8dfdhZ46Qf4tBpwWEZJYM-G39db9A_vsouLLi-bs8A
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,19 @@
+TEST-DATA-DESIGN-PRINCIPLES-01=======================STARTS====================
+{
+  "code": "public class PaymentProcessor {\n    public static void process(String type) {\n        if (type.equals(\"CARD\")) {\n            System.out.println(\"Processing Card Payment\");\n        } else if (type.equals(\"UPI\")) {\n            System.out.println(\"Processing UPI Payment\");\n        }\n    }\n}"
+}
+
+
+
+
+
+TEST-DATA-DESIGN-PRINCIPLES-01=======================ENDS====================
+
+TEST-DATA-DESIGN-PRINCIPLES-02=======================STARTS====================
+
+{
+  "code": "public class OrderManager extends DatabaseConnection implements PaymentProcessor, ReportGenerator {\n\n    private String dbUrl = \"jdbc:mysql://localhost:3306/orders\";\n\n    public void processPayment(String type, double amount) {\n        if (type.equals(\"CreditCard\")) {\n            System.out.println(\"Processing credit card payment: \" + amount);\n        } else if (type.equals(\"PayPal\")) {\n            System.out.println(\"Processing PayPal payment: \" + amount);\n        } else {\n            System.out.println(\"Unknown payment type!\");\n        }\n    }\n\n    @Override\n    public void connect() {\n        throw new UnsupportedOperationException(\"Direct DB connection not allowed here!\");\n    }\n\n    @Override\n    public void generatePDFReport() {\n        System.out.println(\"Not supported but forced by interface.\");\n    }\n\n    @Override\n    public void generateExcelReport() {\n        System.out.println(\"Not supported but forced by interface.\");\n    }\n\n    public void saveOrder(String orderData) {\n        MySQLDatabase db = new MySQLDatabase();\n        db.insert(orderData);\n    }\n}\n\nclass MySQLDatabase {\n    public void insert(String data) {\n        System.out.println(\"Inserting into MySQL: \" + data);\n    }\n}\n\nclass DatabaseConnection {\n    public void connect() {\n        System.out.println(\"Connected to DB\");\n    }\n}\n\ninterface PaymentProcessor {\n    void processPayment(String type, double amount);\n}\n\ninterface ReportGenerator {\n    void generatePDFReport();\n    void generateExcelReport();\n}",
+  "type": "DESIGN_PRINCIPLE"
+}
+
+TEST-DATA-DESIGN-PRINCIPLES-02=======================ENDS====================

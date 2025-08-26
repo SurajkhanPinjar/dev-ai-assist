@@ -1,0 +1,13 @@
+{
+  "code": "import java.util.List; public class Test { public static void main(String[] args){ System.out.println(\"Hello\"); } }",
+  "type": "BUG_FINDING"
+}
+O/P:
+
+{
+  "violations": [
+    { "message": "Unused import: java.util.List" },
+    { "message": "Avoid using System.out.println, use logger instead." }
+  ]
+}
+

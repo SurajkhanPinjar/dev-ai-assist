@@ -3,4 +3,18 @@ server:
 spring:
   application:
     name: design-principle-checks
+  main:
+    allow-bean-definition-overriding: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+  api-docs:
+    path: /v3/api-docs

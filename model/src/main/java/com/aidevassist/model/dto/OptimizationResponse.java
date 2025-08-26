@@ -10,6 +10,6 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class OptimizationResponse {
-    private String optimizedCode;
-    private List<String> improvements;
+    private String optimizedCode;       // final code after optimization
+    private List<String> suggestions;   // list of human-readable suggestions
 }
