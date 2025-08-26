@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/code-optimizer" />
             <option value="$PROJECT_DIR$/design-principle-checks" />
             <option value="$PROJECT_DIR$/eureka-server" />
+            <option value="$PROJECT_DIR$/junit_generator" />
             <option value="$PROJECT_DIR$/model" />
           </set>
         </option>

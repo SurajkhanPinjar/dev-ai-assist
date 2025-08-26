@@ -6,4 +6,5 @@ include 'eureka-server','api-gateway',
         'model',
         'code-optimizer',
         'auto-javadocs',
-        'design-principle-checks'
+        'design-principle-checks',
+        'junit_generator'
