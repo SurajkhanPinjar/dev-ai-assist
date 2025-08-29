@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  ai-core:
+    build:
+      context: .
+      dockerfile: ai-core/Dockerfile
+    container_name: ai-core-app
+    ports:
+      - "8081:8081"
+    environment:
+      # Database connection
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ai_core
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      # Spring AI configuration
+      - SPRING_AI_OLLAMA_CHAT_OPTIONS_MODEL=mistral
+      # *** The new, definitive fix for the connection issue ***
+      - langchain4j.ollama.base-url=http://host.docker.internal:11434
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_DB: ai_core
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

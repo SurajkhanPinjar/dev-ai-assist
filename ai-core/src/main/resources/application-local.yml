@@ -1,0 +1,73 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ai-core
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  ai:
+    ollama:
+      base-url:
+      chat:
+        options:
+          model: mistral
+      embedding:
+        options:
+          model: nomic-embed-text
+    vectorstore:
+      pgvector:
+        host: localhost
+        port: 5432
+        database: postgres
+        user: postgres
+        password: password
+        table-name: code_rules
+        dimensions: 768
+        initialize-schema: true
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # expose all actuator endpoints (health, metrics, beans, etc.)
+
+  endpoint:
+    health:
+      show-details: always
+
+#eureka:
+#  client:
+#    enabled: false
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+
+#spring:
+#  application:
+#    name: ai-core
+#
+#  ai:
+#    model:
+#      chat: ollama # enable ollama chat model
+#    ollama:
+#      base-url: http://localhost:11434
+#      chat:
+#        options:
+#          model: mistral
+
+# gpt 5 paid version
+#openai:
+#  api-url: https://api.openai.com/v1/chat/completions
+#  model: gpt-5
+#  key: sk-proj-5R1amvLv28rKK0KLBY2o_VoqGsQ4GwkL-UPqjYSrTUYKopA4A7aoJv1mpNwjmjmswQDDDT3BlbkFJk-pYSoD2GMg3FLxFDjxsUYRv-jZjW1id8dfdhZ46Qf4tBpwWEZJYM-G39db9A_vsouLLi-bs8A

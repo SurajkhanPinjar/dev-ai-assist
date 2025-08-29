@@ -59,3 +59,43 @@
 ./gradlew :junit_generator:bootRun
 ./gradlew :junit_generator:bootRun --debug-jvm --no-daemon
  http://localhost:8088/swagger-ui/index.html
+
+
+ ===================KILL SERVER PORT=============
+     MAC:-
+     sudo lsof -i :8081
+     kill -9 [PID]
+
+
+     Windows
+     netstat -ano | findstr :8081
+     taskkill /PID [PID] /F
+ =============================================
+
+ ===========DOCKER Commands ================
+->docker ps
+
+->docker compose build
+->docker compose up --build
+
+# to run logs which we ran spring
+-> docker logs -f ai-core-app
+
+# to stop
+docker stop <container_id>
+
+# Navigate into
+docker build -t ai-core-app -f ./ai-core/Dockerfile .
+
+# Postgres
+-> docker exec -it postgres psql -U postgres -d ai_core
+        - \dt
+
+1. Local Dev Mode
+    	•	Run Postgres in Docker:
+    	docker compose up postgres -d
+
+2. Full Dockerized Mode
+    Run everything in Docker:
+        docker compose up -d --build
+
