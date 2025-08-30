@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: ai-core
-  profiles:
-    active: docker
 
 #eureka:
 #  client:
