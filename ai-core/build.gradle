@@ -13,62 +13,49 @@ java {
 	}
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
-
-configurations.all {
-	resolutionStrategy.eachDependency { details ->
-		if (details.requested.group == 'com.fasterxml.jackson.core') {
-			details.useVersion '2.17.0'
-		}
-	}
-}
-
 repositories {
 	mavenCentral()
-	maven { url = uri("https://repo.spring.io/milestone") } // add milestone repo for spring-ai releases
+	maven { url = uri("https://repo.spring.io/milestone") } // for Spring AI releases
 }
 
 dependencies {
+	// Spring Boot core
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-//	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
-	implementation 'com.fasterxml.jackson.core:jackson-core:2.17.0'
-	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.0'
-	implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-	implementation project(":model")
-
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
+	// Dev tools (optional)
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-	// ✅ Actuator for health, metrics
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	// to register service into Eureka
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-
+	// OpenAPI / Swagger UI
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
 
-//	// ✅ Spring AI BOM + Ollama starter
-//	implementation platform("org.springframework.ai:spring-ai-bom:1.0.1")
-//	implementation "org.springframework.ai:spring-ai-starter-model-ollama:1.0.1"
+	// HTTP client
+	implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 
-	// LangChain4j core + embeddings
+	// Local project modules
+	implementation project(":model")
+
+	// LangChain4j for RAG
+	implementation 'dev.langchain4j:langchain4j-core:0.33.0'
 	implementation 'dev.langchain4j:langchain4j:0.33.0'
-	// The core Ollama integration for LangChain4j
 	implementation 'dev.langchain4j:langchain4j-ollama:0.33.0'
+	implementation 'dev.langchain4j:langchain4j-weaviate:0.33.0'
+	implementation 'dev.langchain4j:langchain4j-easy-rag:1.4.0-beta10'
 
+	// For JSON handling (optional but useful)
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations'
+	implementation 'com.fasterxml.jackson.core:jackson-core'
+
+	// Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {

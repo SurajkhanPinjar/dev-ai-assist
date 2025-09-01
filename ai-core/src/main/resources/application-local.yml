@@ -30,6 +30,12 @@ spring:
         table-name: code_rules
         dimensions: 768
         initialize-schema: true
+      weaviate:
+        scheme: http
+        host: localhost
+        port: 8080
+        api-key: ""   # optional if not secured
+        index: documents
 
 eureka:
   client:

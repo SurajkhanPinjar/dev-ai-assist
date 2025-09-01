@@ -1,36 +1,97 @@
-version: "3.8"
 
 services:
   ai-core:
     build:
       context: .
       dockerfile: ai-core/Dockerfile
+      args:
+        JDK_VERSION: 21
     container_name: ai-core-app
     ports:
       - "8081:8081"
     environment:
-      # Database connection
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ai_core
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=password
-      # Spring AI configuration
-      - SPRING_AI_OLLAMA_CHAT_OPTIONS_MODEL=mistral
-      # *** The new, definitive fix for the connection issue ***
-      - langchain4j.ollama.base-url=http://host.docker.internal:11434
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/ai_core"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "password"
+      SPRING_AI_OLLAMA_CHAT_OPTIONS_MODEL: "mistral"
+      langchain4j.ollama.base-url: "http://ollama:11434"
+      ENABLE_RAG: "true"
+      ENABLE_LANGCHAIN4J: "true"
+      WEAVIATE_URL: "http://weaviate:8080"
     depends_on:
       - postgres
+      - weaviate
+      - ollama
+    networks:
+      - ai-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/actuator/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
 
   postgres:
     image: postgres:15
     container_name: postgres
     environment:
-      POSTGRES_DB: ai_core
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: "ai_core"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ai-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ai_core"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  weaviate:
+    image: semitechnologies/weaviate:1.25.3
+    container_name: weaviate
+    restart: unless-stopped
+    ports:
+      - "8180:8080"
+    environment:
+      ENABLE_SINGLE_NODE: "true"
+      CLUSTER_HOSTNAME: "weaviate"
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
+      ENABLE_MODULES: ""
+      DEFAULT_VECTORIZER_MODULE: ""
+      QUERY_DEFAULTS_LIMIT: 25
+    volumes:
+      - ./data:/var/lib/weaviate
+    networks:
+      - ai-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/.well-known/ready || exit 1"]
+      interval: 10s
+      retries: 15
+      start_period: 60s
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - ai-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
 
 volumes:
   postgres_data:
+
+networks:
+  ai-network:
+    driver: bridge

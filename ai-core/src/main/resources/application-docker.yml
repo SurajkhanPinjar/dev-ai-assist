@@ -22,7 +22,7 @@ spring:
           model: nomic-embed-text
     vectorstore:
       pgvector:
-        host: host.docker.internal
+        host: postgres
         port: 5432
         database: postgres
         user: postgres
@@ -30,6 +30,10 @@ spring:
         table-name: code_rules
         dimensions: 768
         initialize-schema: true
+      weaviate:
+        scheme: http
+        host: weaviate
+        port: 8080
 
 eureka:
   client:
