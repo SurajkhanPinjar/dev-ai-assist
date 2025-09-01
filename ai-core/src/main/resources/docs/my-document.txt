@@ -1,0 +1,28 @@
+=== Company Overview ===
+Acme Technologies is a Bengaluru-based startup specializing in AI-driven customer support.
+The company was founded in 2019 and has 120 employees across India, Singapore, and the US.
+
+=== Products ===
+1. AcmeChat — An AI-powered chat assistant for websites and mobile apps.
+2. AcmeDocs — A knowledge management system that uses embeddings for document search.
+3. AcmeVoice — A voice AI for call centers.
+
+=== FAQs ===
+Q: What industries does Acme serve?
+A: E-commerce, banking, healthcare, and telecom.
+
+Q: Does Acme provide 24/7 support?
+A: Yes, support is available 24/7 through live chat and email.
+
+Q: How is AcmeDocs priced?
+A: AcmeDocs uses a subscription model starting at $99 per month.
+
+=== Random Knowledge ===
+- The capital of Karnataka is Bengaluru.
+- The Eiffel Tower is located in Paris, France.
+- Water boils at 100 degrees Celsius under normal atmospheric pressure.
+
+=== Story Snippet ===
+One evening, a customer messaged AcmeChat at midnight.
+The AI detected urgency and resolved the issue in less than 2 minutes.
+The customer later tweeted: "Best support ever — felt like magic!"

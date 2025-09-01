@@ -1,0 +1,50 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ai-core
+
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  ai:
+    ollama:
+      base-url: http://host.docker.internal:11434
+      chat:
+        options:
+          model: mistral
+      embedding:
+        options:
+          model: nomic-embed-text
+    vectorstore:
+      pgvector:
+        host: postgres
+        port: 5432
+        database: postgres
+        user: postgres
+        password: password
+        table-name: code_rules
+        dimensions: 768
+        initialize-schema: true
+      weaviate:
+        scheme: http
+        host: weaviate
+        port: 8080
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # expose all actuator endpoints (health, metrics, beans, etc.)
+
+  endpoint:
+    health:
+      show-details: always

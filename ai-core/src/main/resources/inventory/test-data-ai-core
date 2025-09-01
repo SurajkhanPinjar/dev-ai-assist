@@ -1,0 +1,36 @@
+# Embedding Controller.
+This is a sample document about artificial intelligence and machine learning.
+A guide to natural language processing in 2025.
+Machine learning algorithms for predictive analytics.
+
+Search:
+    artificial intelligence
+
+{
+   "question": " this code: \n\npackage com.example.demo.service;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class UserService {\n    private final List<String> users = new ArrayList<>();\n\n    public boolean addUser(String username) {\n        if (username == null || username.trim().isEmpty()) {\n            throw new IllegalArgumentException(\"Username cannot be empty\");\n        }\n        if (users.contains(username)) {\n            return false;\n        }\n        users.add(username);\n        return true;\n    }\n\n    public boolean removeUser(String username) {\n        if (username == null) {\n            return false;\n        }\n        return users.remove(username);\n    }\n\n    public List<String> getAllUsers() {\n        return new ArrayList<>(users);\n    }\n\n    public String findUserByPrefix(String prefix) {\n        for (String user : users) {\n            if (user.startsWith(prefix)) {\n                return user;\n            }\n        }\n        return null;\n    }\n}",
+  "answer": "string",
+  "type": "java-docs"
+}
+
+{
+   "question": " this code: \n\npackage com.example.demo.service;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class UserService {\n    private final List<String> users = new ArrayList<>();\n\n    public boolean addUser(String username) {\n        if (username == null || username.trim().isEmpty()) {\n            throw new IllegalArgumentException(\"Username cannot be empty\");\n        }\n        if (users.contains(username)) {\n            return false;\n        }\n        users.add(username);\n        return true;\n    }\n\n    public boolean removeUser(String username) {\n        if (username == null) {\n            return false;\n        }\n        return users.remove(username);\n    }\n\n    public List<String> getAllUsers() {\n        return new ArrayList<>(users);\n    }\n\n    public String findUserByPrefix(String prefix) {\n        for (String user : users) {\n            if (user.startsWith(prefix)) {\n                return user;\n            }\n        }\n        return null;\n    }\n}",
+  "answer": "string",
+  "type": "code-optimizer"
+}
+
+{
+   "question": "this code: \n\npackage com.example.demo.service;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class UserService {\n    private final List<String> users = new ArrayList<>();\n\n    public boolean addUser(String username) {\n        if (username == null || username.trim().isEmpty()) {\n            throw new IllegalArgumentException(\"Username cannot be empty\");\n        }\n        if (users.contains(username)) {\n            return false;\n        }\n        users.add(username);\n        return true;\n    }\n\n    public boolean removeUser(String username) {\n        if (username == null) {\n            return false;\n        }\n        return users.remove(username);\n    }\n\n    public List<String> getAllUsers() {\n        return new ArrayList<>(users);\n    }\n\n    public String findUserByPrefix(String prefix) {\n        for (String user : users) {\n            if (user.startsWith(prefix)) {\n                return user;\n            }\n        }\n        return null;\n    }\n}",
+  "answer": "string",
+  "type": "code-reviewer"
+}
+{
+   "question": " this code: \n\npackage com.example.demo.service;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class UserService {\n    private final List<String> users = new ArrayList<>();\n\n    public boolean addUser(String username) {\n        if (username == null || username.trim().isEmpty()) {\n            throw new IllegalArgumentException(\"Username cannot be empty\");\n        }\n        if (users.contains(username)) {\n            return false;\n        }\n        users.add(username);\n        return true;\n    }\n\n    public boolean removeUser(String username) {\n        if (username == null) {\n            return false;\n        }\n        return users.remove(username);\n    }\n\n    public List<String> getAllUsers() {\n        return new ArrayList<>(users);\n    }\n\n    public String findUserByPrefix(String prefix) {\n        for (String user : users) {\n            if (user.startsWith(prefix)) {\n                return user;\n            }\n        }\n        return null;\n    }\n}",
+  "answer": "string",
+  "type": "junit-test"
+}
+
+{
+  "question": "write test cases for this code",
+  "answer": "string",
+  "type": "junit-test"
+}
