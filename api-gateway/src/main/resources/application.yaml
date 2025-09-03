@@ -19,16 +19,6 @@ spring:
           predicates:
             - Path=/api/ai/**
 
-        - id: code-analyzer
-          uri: lb://code-analyzer
-          predicates:
-            - Path=/api/analyzer/**
-
-        - id: bugfinder
-          uri: lb://bugfinder
-          predicates:
-            - Path=/api/bug/**
-
 management:
   endpoints:
     web:

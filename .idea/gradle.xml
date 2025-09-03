@@ -11,13 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ai-core" />
             <option value="$PROJECT_DIR$/api-gateway" />
-            <option value="$PROJECT_DIR$/auto-javadocs" />
-            <option value="$PROJECT_DIR$/bugfinder" />
-            <option value="$PROJECT_DIR$/code-analyzer" />
-            <option value="$PROJECT_DIR$/code-optimizer" />
-            <option value="$PROJECT_DIR$/design-principle-checks" />
             <option value="$PROJECT_DIR$/eureka-server" />
-            <option value="$PROJECT_DIR$/junit_generator" />
             <option value="$PROJECT_DIR$/model" />
           </set>
         </option>

@@ -4,12 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ai-core/dev-ai-assist.ai-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ai-core/dev-ai-assist.ai-core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-gateway/dev-ai-assist.api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api-gateway/dev-ai-assist.api-gateway.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/auto-javadocs/dev-ai-assist.auto-javadocs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/auto-javadocs/dev-ai-assist.auto-javadocs.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bugfinder/dev-ai-assist.bugfinder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bugfinder/dev-ai-assist.bugfinder.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/code-analyzer/dev-ai-assist.code-analyzer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/code-analyzer/dev-ai-assist.code-analyzer.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/code-optimizer/dev-ai-assist.code-optimizer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/code-optimizer/dev-ai-assist.code-optimizer.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/design-principle-checks/dev-ai-assist.design-principle-checks.main.iml" filepath="$PROJECT_DIR$/.idea/modules/design-principle-checks/dev-ai-assist.design-principle-checks.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/junit_generator/dev-ai-assist.junit_generator.main.iml" filepath="$PROJECT_DIR$/.idea/modules/junit_generator/dev-ai-assist.junit_generator.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/dev-ai-assist.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/model/dev-ai-assist.model.main.iml" />
     </modules>
   </component>

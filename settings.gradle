@@ -1,10 +1,4 @@
 rootProject.name = 'dev-ai-assist'
 include 'eureka-server','api-gateway',
         'ai-core',
-        'code-analyzer',
-        'bugfinder',
-        'model',
-        'code-optimizer',
-        'auto-javadocs',
-        'design-principle-checks',
-        'junit_generator'
+        'model'
