@@ -110,7 +110,7 @@ Run this on mac terminal:
     curl http://localhost:8181                       # Transformers API
 
 2. to run weaviate
-        bash:    weaviate --host 0.0.0.0 --port 8080 --scheme http
+        bash:    weaviate --host 0.0.0.0 --port 8080 --scheme http                  !!!!!!
         weaviate --host localhost --port 8080 --scheme http
         curl http://localhost:8080/v1/schema
 

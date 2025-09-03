@@ -1,0 +1,9 @@
+
+# Pick a small model to quickly test loading
+model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+
+# Load tokenizer and model from Hugging Face Hub
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+print("✅ Model loaded successfully!")

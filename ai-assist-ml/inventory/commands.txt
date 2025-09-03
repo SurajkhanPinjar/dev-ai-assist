@@ -1,0 +1,22 @@
+# Create virtual environment
+python3 -m venv lora-env
+source lora-env/bin/activate
+
+# Install Hugging Face & LoRA essentials
+pip install torch transformers datasets peft accelerate bitsandbytes huggingface_hub
+
+https://huggingface.co/settings/tokens
+
+
+========Everytime Commands:==========
+--> source lora-env/bin/activate
+->> huggingface-cli login
+
+
+token name: ai-assist
+token→ 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
+
+
+create python file.
+→nano test_model.py
+add code and ctrl+o → enter to save, ctr+x → exit
